@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About – OpsLink Hosting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg-main: #050812;
+      --bg-card: #0b1220;
+      --accent: #4e8cff;
+      --accent-soft: #7fa4ff;
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --text-mute: #6b7280;
+      --border-subtle: rgba(148,163,184,0.25);
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 50%, #000 100%);
+      color: var(--text-main);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .navbar {
+      position: sticky; top: 0; z-index: 40;
+      background: linear-gradient(to bottom, rgba(5,8,18,0.98), rgba(5,8,18,0.9));
+      border-bottom: 1px solid rgba(15,23,42,0.95);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand img { height: 32px; }
+    .nav-links { display: flex; gap: 16px; font-size: 13px; }
+    .nav-links a { color: var(--text-soft); border-bottom: 2px solid transparent; padding: 6px 0; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { border-color: var(--accent); color: #fff; }
+
+    .nav-cta a {
+      font-size: 12px; padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--text-soft);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    h1 { font-size: 30px; margin-bottom: 10px; }
+    p.subtitle { font-size: 14px; color: var(--text-soft); margin-bottom: 30px; }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin-bottom: 22px;
+    }
+
+    h2 { font-size: 18px; color: var(--accent); margin-bottom: 6px; }
+    p { font-size: 13px; color: var(--text-soft); line-height: 1.6; }
+
+    footer {
+      border-top: 1px solid rgba(15,23,42,0.95);
+      text-align: center;
+      padding: 24px 0;
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+  </style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="assets/opslink-hosting-logo.png" alt="OpsLink Hosting" />
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="game-hosting.html">Game Hosting</a>
+      <a href="bot-hosting.html">Bot & Voice</a>
+      <a href="enterprise.html">Enterprise</a>
+      <a href="about.html" class="active">About</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://panel.opslinkcad.com" target="_blank">Panel Login</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1>About OpsLink Hosting</h1>
+  <p class="subtitle">
+    OpsLink Hosting is part of the OpsLink Systems network — providing reliable infrastructure for
+    game servers, Discord bots, and enterprise dispatch solutions since 2024.
+  </p>
+
+  <div class="card">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is simple: deliver enterprise-grade performance to small and mid-sized communities.
+      Whether you're running a FiveM city, a GMod sandbox, or a large voice network — OpsLink Hosting
+      offers the tools and uptime you need to grow, without overspending on “slot-based” pricing.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Infrastructure</h2>
+    <p>
+      Every OpsLink node runs on NVMe-backed systems with automatic DDoS mitigation and redundant
+      uplinks. We deploy through Google Cloud and OVH networks for consistent latency and stability.
+      Our control layer is powered by Pterodactyl, giving clients full transparency and access to their environments.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Part of OpsLink Systems</h2>
+    <p>
+      OpsLink Hosting operates under the OpsLink Systems umbrella — the same group behind OpsLink CAD,
+      OpsLink PremierOne, and several next-gen roleplay technology solutions. Together, we’re building
+      a unified ecosystem of tools for communities that value professionalism and realism.
+    </p>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> OpsLink Systems · About.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
