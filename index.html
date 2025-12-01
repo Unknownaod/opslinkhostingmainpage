@@ -3,55 +3,138 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OpsLink Hosting</title>
+<title>OpsLink Hosting – Next-Gen Game & Bot Hosting</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div id="snow"></div>
 
+<!-- NAVBAR -->
 <header>
   <nav>
     <div class="logo">
       <img src="https://i.imgur.com/OVaIQea.png" alt="OpsLink Hosting" />
     </div>
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="game-servers.html">Game Servers</a></li>
-      <li><a href="web-hosting.html">Web Hosting</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="support.html">Support</a></li>
+      <li><a href="#game">Game Hosting</a></li>
+      <li><a href="#bot">Bot Hosting</a></li>
+      <li><a href="#enterprise">Enterprise</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
+<!-- HERO SECTION -->
 <section class="hero">
-  <h1>Next-Generation Hosting for Your Community</h1>
-  <p>Powered by OpsLink Systems — lightning-fast, reliable, and fully automated.</p>
-  <a href="game-servers.html" class="btn-primary">Get Started</a>
+  <h1>Next-Generation Hosting for Games & Bots</h1>
+  <p>Powered by <b>OpsLink Systems</b> — optimized, automated, and ready for your community.</p>
+  <a href="#game" class="btn-primary">View Hosting Plans</a>
 </section>
 
-<section class="plans">
-  <div class="plan">
-    <h2>Game Hosting</h2>
-    <p>Deploy your favorite game servers in seconds — from FiveM to Minecraft.</p>
-    <a href="game-servers.html" class="btn-secondary">Explore</a>
-  </div>
-  <div class="plan">
-    <h2>Web Hosting</h2>
-    <p>Run your website, API, or dashboard with guaranteed uptime and performance.</p>
-    <a href="web-hosting.html" class="btn-secondary">View Plans</a>
-  </div>
-  <div class="plan">
-    <h2>VPS Hosting</h2>
-    <p>Scalable private servers with dedicated CPU, disk, and memory allocations.</p>
-    <a href="game-servers.html" class="btn-secondary">Learn More</a>
+<!-- GAME HOSTING -->
+<section id="game" class="plans">
+  <h2>Game Hosting</h2>
+  <p class="section-desc">Reliable servers for your RP communities, Minecraft networks, or dedicated projects — backed by OpsLink performance.</p>
+
+  <div class="plan-grid">
+    <div class="plan">
+      <h3>FiveM Hosting</h3>
+      <ul>
+        <li>4 GB RAM</li>
+        <li>2 vCPUs</li>
+        <li>NVMe SSD Storage</li>
+        <li>Automatic Backups</li>
+        <li>DDoS Protection</li>
+      </ul>
+      <a href="#" class="btn-primary">Order – $8/mo</a>
+    </div>
+
+    <div class="plan">
+      <h3>Minecraft Hosting</h3>
+      <ul>
+        <li>6 GB RAM</li>
+        <li>3 vCPUs</li>
+        <li>Full Plugin &amp; Mod Support</li>
+        <li>Instant Setup</li>
+        <li>99.9% Uptime</li>
+      </ul>
+      <a href="#" class="btn-primary">Order – $10/mo</a>
+    </div>
+
+    <div class="plan">
+      <h3>Rust Hosting</h3>
+      <ul>
+        <li>8 GB RAM</li>
+        <li>4 vCPUs</li>
+        <li>High Tick Rate</li>
+        <li>Custom Configuration Panel</li>
+        <li>24/7 Support</li>
+      </ul>
+      <a href="#" class="btn-primary">Order – $14/mo</a>
+    </div>
   </div>
 </section>
 
+<!-- BOT HOSTING -->
+<section id="bot" class="plans alt-bg">
+  <h2>Bot Hosting</h2>
+  <p class="section-desc">High-performance hosting for Discord.js, Lavalink, TeamSpeak, and Mumble bots — with dedicated uptime and resources.</p>
+
+  <div class="plan-grid">
+    <div class="plan">
+      <h3>Discord.js Hosting</h3>
+      <ul>
+        <li>1 GB RAM</li>
+        <li>1 vCPU</li>
+        <li>Node.js Ready</li>
+        <li>Fast Deploy &amp; Restarts</li>
+        <li>99.9% Uptime</li>
+      </ul>
+      <a href="#" class="btn-primary">Order – $4/mo</a>
+    </div>
+
+    <div class="plan">
+      <h3>Lavalink Hosting</h3>
+      <ul>
+        <li>2 GB RAM</li>
+        <li>2 vCPUs</li>
+        <li>High Audio Throughput</li>
+        <li>Low Latency</li>
+        <li>Instant Setup</li>
+      </ul>
+      <a href="#" class="btn-primary">Order – $6/mo</a>
+    </div>
+
+    <div class="plan">
+      <h3>Voice Server Hosting</h3>
+      <ul>
+        <li>Up to 100 Slots</li>
+        <li>TeamSpeak or Mumble</li>
+        <li>SSL &amp; Encryption Ready</li>
+        <li>Global Locations</li>
+        <li>Control Panel Access</li>
+      </ul>
+      <a href="#" class="btn-primary">Order – $7/mo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ENTERPRISE SOLUTIONS -->
+<section id="enterprise" class="enterprise">
+  <h2>Enterprise Solutions</h2>
+  <p>Need something custom? We provide tailored infrastructure for enterprise communities, developers, and organizations.</p>
+  <a href="#contact" class="btn-secondary">Contact Us</a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact OpsLink</h2>
+  <p>Email: <a href="mailto:support@opslinkcad.com">support@opslinkcad.com</a> | Discord: <a href="#">Join Our Server</a></p>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <p>© 2025 OpsLink Systems. All rights reserved.</p>
 </footer>
 
 <script src="snow.js"></script>
-</body>
-</html>
