@@ -120,7 +120,7 @@
     .page-subtitle {
       font-size: 13px;
       color: var(--text-soft);
-      max-width: 500px;
+      max-width: 520px;
       margin-bottom: 20px;
     }
 
@@ -168,20 +168,9 @@
       margin-bottom: 4px;
     }
 
-    .plan-name {
-      font-weight: 600;
-    }
-
-    .plan-price {
-      font-size: 20px;
-      font-weight: 600;
-    }
-
-    .plan-price span {
-      font-size: 11px;
-      color: var(--text-soft);
-      font-weight: 400;
-    }
+    .plan-name { font-weight: 600; }
+    .plan-price { font-size: 20px; font-weight: 600; }
+    .plan-price span { font-size: 11px; color: var(--text-soft); font-weight: 400; }
 
     .plan-desc {
       font-size: 12px;
@@ -214,9 +203,7 @@
       margin-bottom: 8px;
     }
 
-    .spec-grid div span {
-      display: block;
-    }
+    .spec-grid div span { display: block; }
 
     .plan-footer {
       display: flex;
@@ -227,9 +214,7 @@
       margin-top: 6px;
     }
 
-    .plan-footer a {
-      color: var(--accent-soft);
-    }
+    .plan-footer a { color: var(--accent-soft); }
 
     .side-card {
       background: rgba(11,18,32,0.98);
@@ -239,16 +224,8 @@
       font-size: 13px;
     }
 
-    .side-card h2 {
-      margin: 0 0 4px;
-      font-size: 15px;
-    }
-
-    .side-card p {
-      margin: 0 0 8px;
-      color: var(--text-soft);
-      font-size: 12px;
-    }
+    .side-card h2 { margin: 0 0 4px; font-size: 15px; }
+    .side-card p { margin: 0 0 8px; color: var(--text-soft); font-size: 12px; }
 
     .list {
       list-style: none;
@@ -258,9 +235,7 @@
       color: var(--text-soft);
     }
 
-    .list li {
-      padding: 2px 0;
-    }
+    .list li { padding: 2px 0; }
 
     .highlight {
       font-size: 11px;
@@ -280,9 +255,7 @@
       cursor: pointer;
     }
 
-    .btn-primary:hover {
-      filter: brightness(1.05);
-    }
+    .btn-primary:hover { filter: brightness(1.05); }
 
     .table-card {
       background: rgba(11,18,32,0.98);
@@ -292,16 +265,8 @@
       font-size: 12px;
     }
 
-    .table-card h3 {
-      margin: 0 0 6px;
-      font-size: 14px;
-    }
-
-    .hint {
-      font-size: 11px;
-      color: var(--text-mute);
-      margin-bottom: 10px;
-    }
+    .table-card h3 { margin: 0 0 6px; font-size: 14px; }
+    .hint { font-size: 11px; color: var(--text-mute); margin-bottom: 10px; }
 
     table {
       width: 100%;
@@ -315,14 +280,8 @@
       border-bottom: 1px solid rgba(30,41,59,0.9);
     }
 
-    th {
-      color: var(--text-soft);
-      font-weight: 500;
-    }
-
-    td {
-      color: var(--text-main);
-    }
+    th { color: var(--text-soft); font-weight: 500; }
+    td { color: var(--text-main); }
 
     footer {
       max-width: 1200px;
@@ -333,23 +292,10 @@
       border-top: 1px solid rgba(15,23,42,0.95);
     }
 
-    @media (max-width: 960px) {
-      .layout {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .nav-inner {
-        padding-inline: 18px;
-      }
-      main {
-        padding-inline: 18px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .nav-links { display: none; }
-    }
+    @media (max-width: 960px) { .layout { grid-template-columns: 1fr; } }
   </style>
 </head>
+
 <body>
 <header class="navbar">
   <div class="nav-inner">
@@ -372,17 +318,16 @@
 
 <main>
   <div class="topline">Game Hosting</div>
-  <h1>Plans tuned for serious RP communities.</h1>
+  <h1>Powerful, reliable hosting for modern game servers.</h1>
   <p class="page-subtitle">
-    Every plan runs on NVMe-backed nodes with DDoS protection and a Pterodactyl-based control panel.
-    We size your CPU/RAM around scripts and population, not “generic slots”.
+    Launch and manage your own dedicated servers for titles like FiveM, Garry’s Mod, ARK, and Source Engine games — all powered by our OpsLink Pterodactyl network.
   </p>
 
   <div class="chip-row">
-    <span class="chip">FiveM · ER:LC · more</span>
+    <span class="chip">FiveM · Garry’s Mod · CSGO · ARK · TF2</span>
     <span class="chip">Pterodactyl @ panel.opslinkcad.com</span>
-    <span class="chip">Full SFTP access</span>
-    <span class="chip">Automatic backups available</span>
+    <span class="chip">Full SFTP & Console Access</span>
+    <span class="chip">DDoS Protected Infrastructure</span>
   </div>
 
   <section class="layout">
@@ -390,172 +335,117 @@
       <article class="plan-card">
         <div class="plan-header">
           <div>
-            <div class="plan-name">Dev / Community Starter</div>
-            <div class="plan-desc">Great for testing frameworks, dev servers, and light patrol nights.</div>
+            <div class="plan-name">Starter Plan</div>
+            <div class="plan-desc">Ideal for development, testing, or small friend groups.</div>
           </div>
-          <div class="plan-price">$8 <span>/ month</span></div>
+          <div class="plan-price">$6 <span>/month</span></div>
         </div>
-
         <div class="badge-row">
-          <span class="badge">3 GB DDR4 RAM</span>
-          <span class="badge">NVMe storage</span>
+          <span class="badge">2 GB RAM</span>
+          <span class="badge">1 vCPU</span>
+          <span class="badge">NVMe Storage</span>
         </div>
-
         <div class="spec-grid">
-          <div>
-            <span>CPU</span>
-            <span>1 vCPU · high clock</span>
-          </div>
-          <div>
-            <span>Players</span>
-            <span>Up to ~32 active</span>
-          </div>
-          <div>
-            <span>Ideal for</span>
-            <span>Dev / training</span>
-          </div>
+          <div><span>Best for</span><span>Dev & private testing</span></div>
+          <div><span>Players</span><span>Up to ~20</span></div>
+          <div><span>Example</span><span>Garry’s Mod / TF2</span></div>
         </div>
-
         <div class="plan-footer">
-          <span>Simple entry point for new communities.</span>
-          <a href="https://panel.opslinkcad.com" target="_blank" rel="noreferrer">Order via panel</a>
+          <span>Great entry for learning or small events.</span>
+          <a href="https://shop.opslinkcad.com" target="_blank">Order Now</a>
         </div>
       </article>
 
       <article class="plan-card">
         <div class="plan-header">
           <div>
-            <div class="plan-name">Main Patrol – Standard</div>
-            <div class="plan-desc">For active RP communities with 40-64 players and moderate script load.</div>
+            <div class="plan-name">Standard</div>
+            <div class="plan-desc">Perfect for mid-sized communities or RP servers.</div>
           </div>
-          <div class="plan-price">$12 <span>/ month</span></div>
+          <div class="plan-price">$10 <span>/month</span></div>
         </div>
-
         <div class="badge-row">
-          <span class="badge">4 GB DDR4 RAM</span>
-          <span class="badge">Fast NVMe</span>
-          <span class="badge">Priority CPU</span>
+          <span class="badge">4 GB RAM</span>
+          <span class="badge">2 vCPU</span>
+          <span class="badge">NVMe SSD</span>
         </div>
-
         <div class="spec-grid">
-          <div>
-            <span>CPU</span>
-            <span>2 vCPU equivalent</span>
-          </div>
-          <div>
-            <span>Players</span>
-            <span>40–64+ active</span>
-          </div>
-          <div>
-            <span>Ideal for</span>
-            <span>Primary RP server</span>
-          </div>
+          <div><span>Best for</span><span>Public or semi-public servers</span></div>
+          <div><span>Players</span><span>40–64+</span></div>
+          <div><span>Example</span><span>FiveM / ARK</span></div>
         </div>
-
         <div class="plan-footer">
-          <span>Good default for most OpsLink-style communities.</span>
-          <a href="https://panel.opslinkcad.com" target="_blank" rel="noreferrer">Order via panel</a>
+          <span>Balanced price and performance.</span>
+          <a href="https://shop.opslinkcad.com" target="_blank">Order Now</a>
         </div>
       </article>
 
       <article class="plan-card">
         <div class="plan-header">
           <div>
-            <div class="plan-name">Heavy Framework – Performance</div>
-            <div class="plan-desc">When you’re running big frameworks, many resources, and custom scripts.</div>
+            <div class="plan-name">Performance+</div>
+            <div class="plan-desc">For heavily modded or high-traffic communities.</div>
           </div>
-          <div class="plan-price">$18 <span>/ month</span></div>
+          <div class="plan-price">$16 <span>/month</span></div>
         </div>
-
         <div class="badge-row">
           <span class="badge">6 GB RAM</span>
-          <span class="badge">NVMe · high I/O</span>
-          <span class="badge">High priority CPU</span>
+          <span class="badge">3 vCPU</span>
+          <span class="badge">High Priority CPU</span>
         </div>
-
         <div class="spec-grid">
-          <div>
-            <span>CPU</span>
-            <span>2–3 vCPU equivalent</span>
-          </div>
-          <div>
-            <span>Players</span>
-            <span>64+ intense sessions</span>
-          </div>
-          <div>
-            <span>Ideal for</span>
-            <span>Heavily modded servers</span>
-          </div>
+          <div><span>Best for</span><span>Large RP / modded servers</span></div>
+          <div><span>Players</span><span>64+ Active</span></div>
+          <div><span>Example</span><span>FiveM / ARK / Source Games</span></div>
         </div>
-
         <div class="plan-footer">
-          <span>Best for production “main city” / main county servers.</span>
-          <a href="https://panel.opslinkcad.com" target="_blank" rel="noreferrer">Order via panel</a>
+          <span>Production-level performance for big servers.</span>
+          <a href="https://shop.opslinkcad.com" target="_blank">Order Now</a>
         </div>
       </article>
     </div>
 
     <aside class="side-card">
-      <h2>What you get with every game plan</h2>
-      <p>
-        We keep the feature list simple and focus on the stuff that actually matters for RP
-        servers running CADs, bots, and voice.
-      </p>
+      <h2>What You Get</h2>
+      <p>All game hosting plans include:</p>
       <ul class="list">
-        <li>• Pterodactyl panel access at <strong>panel.opslinkcad.com</strong></li>
-        <li>• Full console, schedule, and SFTP file access</li>
-        <li>• Dedicated IPv4 and DDoS-protected network</li>
-        <li>• Optional backup solutions and test servers</li>
+        <li>• Full access to Pterodactyl panel</li>
+        <li>• Instant setup & one-click reinstalls</li>
+        <li>• Free DDoS protection</li>
+        <li>• 24/7 uptime on NVMe hardware</li>
+        <li>• SFTP, console & backup support</li>
       </ul>
-      <div class="highlight">
-        Moving from another host? We’ll guide you through migrating your files and DB.
-      </div>
-      <a href="enterprise.html" class="btn-primary">Need a custom build? Talk to us</a>
+      <div class="highlight">Need something more advanced? We’ll customize a dedicated node for your community.</div>
+      <a href="enterprise.html" class="btn-primary">View Enterprise Options</a>
     </aside>
   </section>
 
   <section class="table-card">
-    <h3>Location &amp; sizing notes</h3>
-    <p class="hint">
-      These are general guidelines. We’ll always look at your specific player counts,
-      framework, and script list if you want tuning advice.
-    </p>
-
+    <h3>Available Game Eggs</h3>
+    <p class="hint">Every OpsLink game plan supports the following titles (pre-configured in our panel).</p>
     <table>
       <thead>
         <tr>
-          <th>Region</th>
-          <th>Latency target (typical)</th>
-          <th>Best for</th>
-          <th>Notes</th>
+          <th>ID</th>
+          <th>Game</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>NA-East</td>
-          <td>15–25 ms</td>
-          <td>Most US / Canadian communities</td>
-          <td>Good “middle ground” for mixed US players.</td>
-        </tr>
-        <tr>
-          <td>NA-Central</td>
-          <td>20–30 ms</td>
-          <td>Nationwide US playerbases</td>
-          <td>Balanced option if your staff are spread out.</td>
-        </tr>
-        <tr>
-          <td>EU</td>
-          <td>15–30 ms</td>
-          <td>European-based communities</td>
-          <td>We’ll target the closest POP to your majority players.</td>
-        </tr>
+        <tr><td>6</td><td>Garry’s Mod</td><td>Sandbox physics game created by Garry Newman and Facepunch Studios.</td></tr>
+        <tr><td>7</td><td>CS: Global Offensive</td><td>Competitive first-person shooter by Valve and Hidden Path.</td></tr>
+        <tr><td>8</td><td>Insurgency</td><td>Close-quarters tactical combat in intense cooperative modes.</td></tr>
+        <tr><td>9</td><td>Team Fortress 2</td><td>Team-based multiplayer shooter by Valve Corporation.</td></tr>
+        <tr><td>10</td><td>ARK: Survival Evolved</td><td>Survive, build, and tame dinosaurs on dedicated ARK servers.</td></tr>
+        <tr><td>11</td><td>Custom Source Engine</td><td>Run custom SRCDS-based games with full mod control.</td></tr>
+        <tr><td>17</td><td>FiveM</td><td>Host your GTA V RP community with full resource and database access.</td></tr>
       </tbody>
     </table>
   </section>
 </main>
 
 <footer>
-  &copy; <span id="year"></span> OpsLink Systems · Game Hosting.
+  © <span id="year"></span> OpsLink Systems · Game Hosting.
 </footer>
 
 <script>
