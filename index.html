@@ -4,936 +4,204 @@
   <meta charset="UTF-8" />
   <title>OpsLink Hosting – Game & Bot Hosting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="description" content="OpsLink Hosting – Dedicated game, Discord bot, and enterprise hosting powered by OpsLink Systems. Fast NVMe storage, DDoS protection, and low latency infrastructure." />
+  <link rel="icon" href="https://i.imgur.com/OVaIQea.png" />
   <style>
     :root {
       --bg-main: #050812;
-      --bg-elevated: #090f1e;
       --bg-card: #0f1628;
-      --bg-chip: rgba(15, 22, 40, 0.8);
       --accent: #4e8cff;
       --accent-soft: #7fa4ff;
-      --accent-strong: #1d4ed8;
-      --border-subtle: rgba(255,255,255,0.04);
-      --border-card: rgba(78,140,255,0.35);
       --text-main: #e5e7eb;
       --text-soft: #9ca3af;
       --text-mute: #6b7280;
-      --danger: #fb7185;
-      --success: #22c55e;
-      --shadow-soft: 0 22px 60px rgba(0,0,0,0.70);
-      --radius-xl: 22px;
       --radius-lg: 16px;
       --radius-pill: 999px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: radial-gradient(circle at top, #0b1020 0, #020617 45%, #000 100%);
-      color: var(--text-main);
-      min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* ==========================
-       NAVBAR
-    ========================== */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: linear-gradient(to bottom, rgba(5,8,18,0.98), rgba(5,8,18,0.92));
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .nav-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 12px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-logo {
-      height: 36px;
-      width: auto;
-    }
-
-    .nav-title {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .nav-badge {
-      font-size: 11px;
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(78,140,255,0.4);
-      background: radial-gradient(circle at top left, rgba(78,140,255,0.25), transparent 60%);
-      color: var(--accent-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      padding: 8px 0;
-      color: var(--text-soft);
-      border-bottom: 2px solid transparent;
-      transition: 0.16s ease;
-    }
-
-    .nav-links a:hover {
-      color: #ffffff;
-    }
-
-    .nav-links a.active {
-      color: #ffffff;
-      border-color: var(--accent);
-    }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      border-radius: var(--radius-pill);
-      padding: 8px 18px;
-      font-size: 13px;
-      border: 1px solid transparent;
-      background: transparent;
-      color: #e5e7eb;
-      cursor: pointer;
-      transition: 0.18s ease;
-    }
-
-    .btn-outline {
-      border-color: rgba(148,163,184,0.4);
-      color: var(--text-soft);
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(148,163,184,0.8);
-      color: #f9fafb;
-      background: rgba(15,23,42,0.8);
-    }
-
-    .btn-primary {
-      background: linear-gradient(to right, #2563eb, #4f46e5);
-      border-color: transparent;
-      color: #f9fafb;
-      box-shadow: 0 14px 40px rgba(37, 99, 235, 0.45);
-    }
-
-    .btn-primary:hover {
-      filter: brightness(1.08);
-      transform: translateY(-0.5px);
-    }
-
-    /* ==========================
-       HERO
-    ========================== */
-    .hero {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 40px 32px 64px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 40px;
-      align-items: center;
-    }
-
-    .hero-left-topline {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      padding: 5px 12px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.7);
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--accent-soft);
-      margin-bottom: 16px;
-    }
-
-    .hero-left-topline span.label {
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(37,99,235,0.18);
-      border: 1px solid rgba(59,130,246,0.55);
-      color: #bfdbfe;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px, 4vw, 42px);
-      line-height: 1.1;
-      margin: 0 0 14px;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(to right, #60a5fa, #a855f7);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 480px;
-      margin-bottom: 24px;
-    }
-
-    .hero-bullets {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
-      font-size: 12px;
-    }
-
-    .hero-bullets span {
-      padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(55,65,81,0.8);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--success);
-      box-shadow: 0 0 12px rgba(34,197,94,0.7);
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .hero-note {
-      font-size: 11px;
-      color: var(--text-mute);
-    }
-
-    .hero-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-      margin-top: 16px;
-      font-size: 12px;
-    }
-
-    .hero-metrics div strong {
-      display: block;
-      font-size: 17px;
-      margin-bottom: 2px;
-    }
-
-    /* Right side hero */
-    .hero-right {
-      position: relative;
-    }
-
-    .hero-panel {
-      background: radial-gradient(circle at top left, rgba(59,130,246,0.18), rgba(15,23,42,0.96));
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148,163,184,0.45);
-      box-shadow: var(--shadow-soft);
-      padding: 18px 18px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-panel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: var(--text-soft);
-      margin-bottom: 14px;
-    }
-
-    .hero-panel-env {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.85);
-      border: 1px solid rgba(148,163,184,0.5);
-    }
-
-    .hero-panel-env span.status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--success);
-    }
-
-    .hero-panel-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 14px;
-    }
-
-    .hero-slab {
-      background: rgba(15,23,42,0.95);
-      border-radius: 18px;
-      border: 1px solid rgba(148,163,184,0.35);
-      padding: 12px 14px;
-      font-size: 12px;
-    }
-
-    .hero-slab h3 {
-      font-size: 13px;
-      margin: 0 0 10px;
-      color: #e5e7eb;
-    }
-
-    .hero-plan-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .hero-plan-row span.label {
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .hero-plan-row span.price {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .hero-plan-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .hero-plan-tags span {
-      padding: 3px 8px;
-      border-radius: var(--radius-pill);
-      background: var(--bg-chip);
-      border: 1px solid rgba(55,65,81,0.9);
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .hero-slab-small-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 4px;
-    }
-
-    .hero-gauge {
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(31,41,55,0.9);
-      overflow: hidden;
-      margin-top: 6px;
-    }
-
-    .hero-gauge-fill {
-      height: 100%;
-      width: 68%;
-      background: linear-gradient(to right, #22c55e, #eab308);
-    }
-
-    .hero-tagline {
-      margin-top: 10px;
-      font-size: 11px;
-      color: var(--text-mute);
-    }
-
-    .hero-panel-floating {
-      position: absolute;
-      right: 4px;
-      bottom: -4px;
-      width: 175px;
-      background: rgba(15,23,42,0.98);
-      border-radius: 18px;
-      border: 1px solid rgba(59,130,246,0.5);
-      padding: 10px 12px;
-      font-size: 11px;
-      box-shadow: 0 18px 45px rgba(15,23,42,0.9);
-    }
-
-    .hero-panel-floating header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-      color: #e5e7eb;
-    }
-
-    .pill {
-      padding: 3px 7px;
-      border-radius: var(--radius-pill);
-      background: rgba(37,99,235,0.18);
-      border: 1px solid rgba(59,130,246,0.65);
-      font-size: 10px;
-    }
-
-    .hero-panel-floating ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 4px;
-      color: var(--text-soft);
-    }
-
-    /* ==========================
-       SECTION WRAPPER
-    ========================== */
-    .section {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 32px 56px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .section-sub {
-      font-size: 13px;
-      color: var(--text-soft);
-      max-width: 460px;
-    }
-
-    /* ==========================
-       FEATURE GRID
-    ========================== */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 16px;
-    }
-
-    .feature-card {
-      background: rgba(15,23,42,0.95);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31,41,55,0.9);
-      padding: 16px 16px 18px;
-      font-size: 13px;
-    }
-
-    .feature-label {
-      font-size: 11px;
-      color: var(--accent-soft);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .feature-title {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .feature-body {
-      color: var(--text-soft);
-      margin-bottom: 10px;
-    }
-
-    .feature-meta {
-      font-size: 11px;
-      color: var(--text-mute);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .feature-meta span.pill {
-      font-size: 10px;
-    }
-
-    /* ==========================
-       PRICING PREVIEW
-    ========================== */
-    .pricing-row {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 18px;
-    }
-
-    .pricing-card {
-      background: rgba(15,23,42,0.98);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(51,65,85,0.9);
-      padding: 18px 18px 16px;
-      font-size: 13px;
-    }
-
-    .pricing-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 6px;
-    }
-
-    .pricing-card-header h3 {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .price-main {
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    .price-suffix {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .pricing-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-      font-size: 11px;
-    }
-
-    .pricing-badges span {
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      background: var(--bg-chip);
-      border: 1px solid rgba(51,65,85,0.9);
-      color: var(--text-soft);
-    }
-
-    .pricing-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 10px;
-      color: var(--text-soft);
-    }
-
-    .pricing-features li {
-      padding: 2px 0;
-    }
-
-    .pricing-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--text-mute);
-    }
-
-    /* ==========================
-       FOOTER
-    ========================== */
-    footer {
-      border-top: 1px solid rgba(15,23,42,0.9);
-      padding: 18px 32px 26px;
-      font-size: 12px;
-      color: var(--text-mute);
-      background: radial-gradient(circle at top, #020617 0, #020617 45%, #000 100%);
-    }
-
-    .footer-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-mute);
-    }
-
-    .footer-links a:hover {
-      color: #e5e7eb;
-    }
-
-    @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: minmax(0,1fr);
-        padding-top: 28px;
-      }
-
-      .hero-right {
-        order: -1;
-      }
-
-      .hero-panel-floating {
-        position: static;
-        margin-top: 12px;
-        width: auto;
-      }
-
-      .hero-panel {
-        padding-bottom: 16px;
-      }
-
-      .feature-grid {
-        grid-template-columns: minmax(0,1fr);
-      }
-
-      .pricing-row {
-        grid-template-columns: minmax(0,1fr);
-      }
-
-      .nav-inner {
-        padding-inline: 18px;
-      }
-
-      .section {
-        padding-inline: 18px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .nav-links {
-        display: none;
-      }
-    }
+      --shadow-soft: 0 22px 60px rgba(0,0,0,0.6);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:radial-gradient(circle at top,#0b1020 0,#020617 45%,#000 100%);color:var(--text-main);}
+    a{text-decoration:none;color:inherit}
+
+    /* NAVBAR */
+    .navbar{position:sticky;top:0;background:rgba(5,8,18,0.95);border-bottom:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(16px);z-index:50;}
+    .nav-inner{max-width:1300px;margin:auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-brand{display:flex;align-items:center;gap:10px}
+    .nav-logo{height:36px}
+    .nav-title{font-size:18px;font-weight:600;text-transform:uppercase}
+    .nav-links{display:flex;gap:18px;font-size:14px;}
+    .nav-links a{color:var(--text-soft);border-bottom:2px solid transparent;padding-bottom:6px;}
+    .nav-links a.active,.nav-links a:hover{color:#fff;border-color:var(--accent);}
+    .btn{border-radius:var(--radius-pill);padding:8px 18px;font-size:13px;border:1px solid rgba(148,163,184,0.4);color:var(--text-soft);background:transparent;cursor:pointer;transition:.2s}
+    .btn:hover{background:rgba(15,23,42,0.8);color:#fff}
+    .btn-primary{background:linear-gradient(to right,#2563eb,#4f46e5);border:none;color:#fff;box-shadow:0 0 25px rgba(37,99,235,0.3);}
+    .btn-primary:hover{filter:brightness(1.08)}
+
+    /* HERO */
+    .hero{max-width:1300px;margin:auto;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:40px;padding:60px 32px;}
+    .hero h1{font-size:clamp(32px,4vw,42px);line-height:1.1;margin:0 0 12px;}
+    .hero h1 span{background:linear-gradient(to right,#60a5fa,#a855f7);-webkit-background-clip:text;color:transparent;}
+    .hero p{color:var(--text-soft);font-size:14px;max-width:480px;margin-bottom:20px;}
+    .hero-bullets{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;margin-bottom:18px;}
+    .hero-bullets span{background:rgba(15,23,42,0.8);border:1px solid rgba(55,65,81,0.9);padding:6px 12px;border-radius:var(--radius-pill);}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+    .hero img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);border:1px solid rgba(78,140,255,0.3);}
+
+    /* FEATURES */
+    .section{max-width:1300px;margin:auto;padding:40px 32px;}
+    .section-title{font-size:20px;font-weight:600;margin-bottom:8px;}
+    .section-sub{font-size:13px;color:var(--text-soft);margin-bottom:24px;}
+    .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+    .feature-card{background:rgba(15,23,42,0.95);border:1px solid rgba(30,41,59,0.9);border-radius:var(--radius-lg);padding:18px;font-size:13px;}
+    .feature-label{font-size:11px;color:var(--accent-soft);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;}
+    .feature-title{font-size:15px;font-weight:600;margin-bottom:6px;}
+    .feature-body{color:var(--text-soft);font-size:13px;margin-bottom:8px;}
+    .feature-meta{font-size:11px;color:var(--text-mute);display:flex;justify-content:space-between;}
+
+    /* PRICING */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+    .plan-card{background:rgba(11,18,32,0.98);border:1px solid rgba(30,64,175,0.9);border-radius:var(--radius-lg);padding:20px;font-size:13px;}
+    .plan-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+    .plan-name{font-weight:600;}
+    .plan-price{font-size:22px;font-weight:700;}
+    .plan-price span{font-size:11px;color:var(--text-soft);font-weight:400;}
+    .plan-desc{font-size:12px;color:var(--text-soft);margin-bottom:8px;}
+    .badge-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;font-size:11px;}
+    .badge{padding:4px 8px;border-radius:var(--radius-pill);border:1px solid rgba(30,64,175,0.8);background:rgba(15,23,42,0.9);color:var(--accent-soft);}
+    .plan-footer{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-mute);}
+    .plan-footer a{color:var(--accent-soft);}
+
+    footer{border-top:1px solid rgba(15,23,42,0.9);padding:18px 32px 26px;font-size:12px;color:var(--text-mute);text-align:center;}
+    @media(max-width:960px){.hero{grid-template-columns:1fr;padding-top:30px;}}
   </style>
 </head>
 <body>
-
 <header class="navbar">
   <div class="nav-inner">
     <div class="nav-brand">
-      <!-- Replace src with your actual combined OpsLink Hosting logo -->
       <img src="https://i.imgur.com/OVaIQea.png" alt="OpsLink Hosting" class="nav-logo" />
       <div>
         <div class="nav-title">OpsLink Hosting</div>
-        <div class="nav-badge">Powered by OpsLink Systems</div>
       </div>
     </div>
-
     <nav class="nav-links">
       <a href="index.html" class="active">Overview</a>
       <a href="game-hosting.html">Game Hosting</a>
-      <a href="bot-hosting.html">Bot &amp; Voice Hosting</a>
+      <a href="bot-hosting.html">Bot & Voice</a>
       <a href="enterprise.html">Enterprise</a>
       <a href="about.html">About</a>
     </nav>
-
     <div class="nav-cta">
-      <a class="btn btn-outline" href="https://panel.opslinkcad.com" target="_blank" rel="noreferrer">
-        Panel Login
-      </a>
-      <a class="btn btn-primary" href="game-hosting.html">
-        Continue to OpsLink Hosting
-      </a>
+      <a class="btn" href="https://panel.opslinkcad.com" target="_blank">Panel Login</a>
+      <a class="btn-primary" href="game-hosting.html">View Plans</a>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-left">
-      <div class="hero-left-topline">
-        <span class="label">Game &amp; Bot Infrastructure</span>
-        <span>Low latency · Any size community</span>
-      </div>
-
-      <h1>
-        Serious hosting for <span>roleplay servers</span>
-        and Discord communities.
-      </h1>
-
-      <p class="hero-subtitle">
-        OpsLink Hosting delivers tuned infrastructure for FiveM, and more —
-        plus Discord.js, TeamSpeak, and Mumble — all backed by the same mindset
-        behind OpsLinkCAD.
-      </p>
-
+    <div>
+      <h1>Fast, Reliable <span>Hosting</span> for Game & Bot Servers</h1>
+      <p>OpsLink Hosting provides dedicated performance for FiveM, Garry’s Mod, and Discord.js — powered by our NVMe-backed network at <strong>panel.opslinkcad.com</strong>.</p>
       <div class="hero-bullets">
-        <span><span class="dot"></span> Always-on status monitoring</span>
-        <span>NVMe storage · Ryzen/EPYC nodes</span>
-        <span>DDoS-protected network</span>
+        <span>⚡ NVMe SSD Storage</span>
+        <span>🛡️ DDoS Protection</span>
+        <span>🌐 Global Low Latency</span>
       </div>
-
-      <div class="hero-cta-row">
-        <a href="game-hosting.html" class="btn btn-primary">
-          View Game Hosting Plans
-        </a>
-        <a href="bot-hosting.html" class="btn btn-outline">
-          View Bot &amp; Voice Hosting
-        </a>
-      </div>
-
-      <div class="hero-note">
-        No “one-size-fits-all” bundles — we scale plans to how your community actually plays.
-      </div>
-
-      <div class="hero-metrics">
-        <div>
-          <strong>15–25 ms</strong>
-          Typical latency to NA/ EU POPs
-        </div>
-        <div>
-          <strong>99.9%</strong>
-          Uptime backed by our network partners
-        </div>
-        <div>
-          <strong>OpsLink</strong>
-          Built for communities that don’t do “budget jank”.
-        </div>
+      <div class="hero-cta">
+        <a href="game-hosting.html" class="btn-primary">View Game Hosting</a>
+        <a href="bot-hosting.html" class="btn">View Bot Hosting</a>
       </div>
     </div>
+    <img src="https://i.imgur.com/OVaIQea.png" alt="OpsLink Panel" />
+  </section>
 
-    <div class="hero-right">
-      <div class="hero-panel">
-        <div class="hero-panel-header">
-          <div class="hero-panel-env">
-            <span class="status-dot"></span>
-            <span>node-na-01.opslink.host</span>
-          </div>
-          <span>Realtime resource view</span>
+  <section class="section">
+    <h2 class="section-title">Hosting Plans</h2>
+    <p class="section-sub">Choose from scalable configurations designed for communities of any size.</p>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-name">Starter Plan</div>
+          <div class="plan-price">$6<span>/month</span></div>
         </div>
-
-        <div class="hero-panel-grid">
-          <div class="hero-slab">
-            <h3>OpsLink Game Container</h3>
-            <div class="hero-plan-row">
-              <span class="label">FiveM · 64 slots</span>
-              <span class="price">$10<span style="font-size:11px;">/mo</span></span>
-            </div>
-            <div class="hero-plan-tags">
-              <span>4 GB DDR4</span>
-              <span>NVMe storage</span>
-              <span>Dedicated IPv4</span>
-              <span>Automated backups</span>
-            </div>
-            <p class="hero-tagline">
-              Tuned configs for stable roleplay sessions, heavy scripts, and CAD integrations.
-            </p>
-          </div>
-
-          <div class="hero-slab">
-            <div class="hero-slab-small-row">
-              <span>CPU Utilization</span>
-              <span>68%</span>
-            </div>
-            <div class="hero-gauge">
-              <div class="hero-gauge-fill"></div>
-            </div>
-
-            <div class="hero-slab-small-row" style="margin-top:10px;">
-              <span>Network</span>
-              <span>Clean · DDoS shielded</span>
-            </div>
-            <p class="hero-tagline">
-              Routed through premium carriers with mitigation in front.
-            </p>
-          </div>
+        <div class="plan-desc">Perfect for testing or small RP servers.</div>
+        <div class="badge-row">
+          <span class="badge">2 GB RAM</span>
+          <span class="badge">1 vCPU</span>
+          <span class="badge">NVMe Storage</span>
         </div>
+        <div class="plan-footer">
+          <span>Ideal for dev/testing.</span>
+          <a href="https://shop.opslinkcad.com">Order Now →</a>
+        </div>
+      </div>
 
-        <div class="hero-panel-floating">
-          <header>
-            <span>Discord.js Node</span>
-            <span class="pill">Bot Hosting</span>
-          </header>
-          <ul>
-            <li>• Isolated containers per bot</li>
-            <li>• Node.js LTS, PM2 profiles</li>
-            <li>• Private environment variables</li>
-            <li>• Perfect match for OpsLink CAD webhooks</li>
-          </ul>
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-name">Standard Plan</div>
+          <div class="plan-price">$10<span>/month</span></div>
+        </div>
+        <div class="plan-desc">Great for mid-size roleplay or public servers.</div>
+        <div class="badge-row">
+          <span class="badge">4 GB RAM</span>
+          <span class="badge">2 vCPU</span>
+          <span class="badge">NVMe SSD</span>
+        </div>
+        <div class="plan-footer">
+          <span>Most popular option.</span>
+          <a href="https://shop.opslinkcad.com">Order Now →</a>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-name">Performance+</div>
+          <div class="plan-price">$16<span>/month</span></div>
+        </div>
+        <div class="plan-desc">For high-traffic, modded or enterprise communities.</div>
+        <div class="badge-row">
+          <span class="badge">6 GB RAM</span>
+          <span class="badge">3 vCPU</span>
+          <span class="badge">High Priority CPU</span>
+        </div>
+        <div class="plan-footer">
+          <span>Built for production load.</span>
+          <a href="https://shop.opslinkcad.com">Order Now →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
   <section class="section">
-    <div class="section-header">
-      <div>
-        <div class="section-title">Built for dispatch-style communities</div>
-        <p class="section-sub">
-          Everything from CPU selection to routing policy is tuned for communities that
-          run heavy frameworks, CAD/MDT systems, and long sessions.
-        </p>
-      </div>
-    </div>
-
+    <h2 class="section-title">Why Choose OpsLink</h2>
+    <p class="section-sub">Reliable infrastructure, tailored to the roleplay community ecosystem.</p>
     <div class="feature-grid">
-      <article class="feature-card">
-        <div class="feature-label">Game Hosting</div>
-        <div class="feature-title">Optimized for roleplay frameworks</div>
-        <p class="feature-body">
-          From ESX and custom FiveM frameworks to our other games and modded communities,
-          we shape our plans around your plugin stack, not just “slots”.
-        </p>
-        <div class="feature-meta">
-          <span>FiveM · more</span>
-          <span class="pill">See plans &rarr;</span>
-        </div>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-label">Bots &amp; Voice</div>
-        <div class="feature-title">Discord.js, TeamSpeak &amp; Mumble</div>
-        <p class="feature-body">
-          Run your moderation, logging, music, and CAD integration bots in
-          isolated containers, plus TeamSpeak/Mumble for serious comms.
-        </p>
-        <div class="feature-meta">
-          <span>Node.js LTS · Voice codecs</span>
-          <span class="pill">View specs &rarr;</span>
-        </div>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-label">Enterprise</div>
-        <div class="feature-title">Custom OpsLink solutions</div>
-        <p class="feature-body">
-          Need a full stack: hosting, staff tools, and whatever else your company may need??
-          Our enterprise track lets you talk directly with OpsLink Systems.
-        </p>
-        <div class="feature-meta">
-          <span>Billed per-project</span>
-          <span class="pill">Contact us &rarr;</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- PRICING PREVIEW -->
-  <section class="section">
-    <div class="section-header">
-      <div>
-        <div class="section-title">Transparent starting points</div>
-        <p class="section-sub">
-          These are baseline public configurations. We’ll happily tune things
-          (RAM, CPU, storage, locations) around your community’s actual load.
-        </p>
+      <div class="feature-card">
+        <div class="feature-label">Performance</div>
+        <div class="feature-title">NVMe-Powered Nodes</div>
+        <p class="feature-body">Run with high I/O throughput, faster boot times, and minimal lag under load.</p>
+        <div class="feature-meta"><span>AMD Ryzen / EPYC</span><span>Fast Disk I/O</span></div>
       </div>
-      <div class="section-sub" style="text-align:right;">
-        Full configuration details available on each product page.
+      <div class="feature-card">
+        <div class="feature-label">Control</div>
+        <div class="feature-title">Full Panel Access</div>
+        <p class="feature-body">Access SFTP, console, file management, backups, and analytics from one place.</p>
+        <div class="feature-meta"><span>Pterodactyl Panel</span><span>panel.opslinkcad.com</span></div>
       </div>
-    </div>
-
-    <div class="pricing-row">
-      <div class="pricing-card">
-        <div class="pricing-card-header">
-          <h3>Game Hosting – Starter</h3>
-          <div>
-            <span class="price-main">$8</span>
-            <span class="price-suffix">/month</span>
-          </div>
-        </div>
-        <div class="pricing-badges">
-          <span>3 GB RAM</span>
-          <span>NVMe storage</span>
-          <span>1 vCPU (high clock)</span>
-        </div>
-        <ul class="pricing-features">
-          <li>• Perfect for dev servers and smaller patrols</li>
-          <li>• Pterodactyl-based panel (panel.opslinkcad.com)</li>
-          <li>• Instant restarts · console access · SFTP</li>
-          <li>• Optional upgrade path to production nodes</li>
-        </ul>
-        <div class="pricing-footer">
-          <span>Location options based on region demand.</span>
-          <a href="game-hosting.html">View all game hosting &rarr;</a>
-        </div>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-card-header">
-          <h3>Discord.js Bot Container</h3>
-          <div>
-            <span class="price-main">$3</span>
-            <span class="price-suffix">/month</span>
-          </div>
-        </div>
-        <div class="pricing-badges">
-          <span>Node.js LTS</span>
-          <span>Private env vars</span>
-          <span>PM2 or custom runner</span>
-        </div>
-        <ul class="pricing-features">
-          <li>• Debug logs and crash reports</li>
-        </ul>
-        <div class="pricing-footer">
-          <span>Bundle pricing available for multiple bots.</span>
-          <a href="bot-hosting.html">Bot &amp; voice hosting &rarr;</a>
-        </div>
+      <div class="feature-card">
+        <div class="feature-label">Support</div>
+        <div class="feature-title">OpsLink Systems Reliability</div>
+        <p class="feature-body">Managed by the same developers behind OpsLinkCAD — built for uptime and clarity.</p>
+        <div class="feature-meta"><span>99.9% Uptime</span><span>Support SLA</span></div>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <span>&copy; <span id="year"></span> OpsLink Systems. OpsLink Hosting.</span>
-    <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="enterprise.html">Enterprise</a>
-      <a href="https://opslinkcad.com" target="_blank" rel="noreferrer">OpsLinkCAD</a>
-    </div>
-  </div>
+  © <span id="year"></span> OpsLink Systems · OpsLink Hosting
 </footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 </body>
 </html>
