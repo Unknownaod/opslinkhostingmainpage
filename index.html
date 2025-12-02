@@ -22,19 +22,26 @@
       --radius-pill: 999px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #0b1020 0, #020617 45%, #000 100%);
       color: var(--text-main);
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    /* 🔔 DEVELOPMENT NOTICE */
+    /* 🔔 Development Notice */
     .dev-notice {
       background: linear-gradient(to right, #facc15, #fbbf24);
       color: #1f2937;
@@ -49,6 +56,11 @@
       justify-content: center;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .dev-notice strong {
+      color: #111827;
     }
 
     .dev-notice button {
@@ -86,6 +98,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
+      flex-wrap: wrap;
     }
 
     .nav-brand {
@@ -94,15 +107,23 @@
       gap: 10px;
     }
 
-    .nav-logo { height: 36px; }
+    .nav-logo {
+      height: 38px;
+    }
 
-    .nav-title { font-size: 18px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .nav-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 18px;
       font-size: 14px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -112,9 +133,17 @@
       transition: 0.16s ease;
     }
 
-    .nav-links a.active, .nav-links a:hover {
+    .nav-links a.active,
+    .nav-links a:hover {
       color: #ffffff;
       border-color: var(--accent);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -140,46 +169,72 @@
       box-shadow: 0 0 20px rgba(37,99,235,0.4);
     }
 
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px rgba(37,99,235,0.6);
+    }
+
     /* HERO */
     .hero {
       max-width: 1300px;
       margin: 0 auto;
-      padding: 40px 32px 64px;
+      padding: 60px 32px;
       display: grid;
       grid-template-columns: 1.1fr 1fr;
       gap: 40px;
       align-items: center;
     }
 
-    .hero-left-topline {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      padding: 5px 12px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.7);
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--accent-soft);
-      margin-bottom: 16px;
+    .hero h1 {
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.1;
+      margin: 0 0 14px;
     }
 
-    .hero h1 { font-size: clamp(32px, 4vw, 42px); line-height: 1.1; margin: 0 0 14px; }
-    .hero h1 span { background: linear-gradient(to right, #60a5fa, #a855f7); -webkit-background-clip: text; color: transparent; }
+    .hero h1 span {
+      background: linear-gradient(to right, #60a5fa, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-    .hero-subtitle { font-size: 14px; color: var(--text-soft); max-width: 480px; margin-bottom: 24px; }
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 480px;
+      margin-bottom: 24px;
+    }
 
-    .hero-bullets { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; font-size: 12px; }
-    .hero-bullets span { padding: 6px 12px; border-radius: var(--radius-pill); background: rgba(15,23,42,0.9); border: 1px solid rgba(55,65,81,0.8); }
-
-    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; }
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
 
     /* SECTION WRAPPER */
-    .section { max-width: 1300px; margin: 0 auto; padding: 0 32px 56px; }
+    .section {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 32px 56px;
+    }
 
-    .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; }
-    .section-title { font-size: 18px; font-weight: 600; }
-    .section-sub { font-size: 13px; color: var(--text-soft); }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
 
     /* PRICING */
     .pricing-row {
@@ -197,7 +252,10 @@
       transition: 0.25s ease;
     }
 
-    .pricing-card:hover { transform: translateY(-3px); border-color: var(--accent-soft); }
+    .pricing-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-soft);
+    }
 
     footer {
       border-top: 1px solid rgba(15,23,42,0.9);
@@ -208,8 +266,24 @@
     }
 
     @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; padding-top: 28px; }
-      .pricing-row { grid-template-columns: 1fr; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 28px;
+        text-align: center;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .nav-cta {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -222,6 +296,7 @@
     <button id="closeNotice" aria-label="Close notice">×</button>
   </div>
 
+  <!-- Navbar -->
   <header class="navbar">
     <div class="nav-inner">
       <div class="nav-brand">
@@ -244,15 +319,27 @@
     </div>
   </header>
 
-  <!-- rest of your existing content unchanged -->
-  <main> … </main>
+  <!-- Hero Placeholder -->
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Fast, Secure, and Scalable <span>Hosting Solutions</span></h1>
+        <p class="hero-subtitle">
+          Power your FiveM servers, Discord bots, and voice platforms with enterprise-grade infrastructure by OpsLink Systems.
+        </p>
+        <div class="hero-cta-row">
+          <a href="game-hosting.html" class="btn-primary">View Plans</a>
+          <a href="about.html" class="btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>© <span id="year"></span> OpsLink Systems · OpsLink Hosting</footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Simple dismissible banner
     const notice = document.getElementById("devNotice");
     const closeBtn = document.getElementById("closeNotice");
     closeBtn.addEventListener("click", () => {
